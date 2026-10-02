@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#8b4a2b"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <title>روايتي</title>
 <style>
 :root{--bg:#faf6ef;--panel:#fff;--ink:#2b2118;--mut:#8a7a68;--acc:#8b4a2b;--line:#e6dccb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -129,6 +130,10 @@ details button{width:100%;margin-top:8px}
 <details><summary>⚙ بيانات الرواية</summary>
 <label>المؤلف</label><input id="au" placeholder="اسم المؤلف">
 <label>القالب</label><select id="tp"><option value="pub">تنسيق دار نشر عربي</option><option value="kdp">تنسيق Amazon KDP</option></select>
+<label><input type="checkbox" id="au_on" style="width:auto;margin-inline-end:6px">قسّم الرواية لفصول تلقائياً عند التصدير</label>
+<label>عدد الكلمات التقريبي في الفصل</label><input id="au_w" type="number" min="300" max="20000" step="100" value="2500">
+<small id="au_i" style="color:var(--mut);display:block;margin-top:4px"></small>
+<button class="btn g" id="au_c">حوّل لفصول فعلية</button>
 <button class="btn g" id="cv">🖼 اختيار غلاف</button><input type="file" id="cf" accept="image/*" hidden>
 <button class="btn g" id="th">🌙 الوضع الليلي</button>
 <button class="btn" id="st">✓ تم الانتهاء من الرواية</button>
@@ -187,8 +192,8 @@ const hd=(x)=>'{@top-center{content:"'+x+'";font-size:9pt;color:#555}@bottom-cen
 let css='@page'+hd(q(title)).replace(/^\{/,'{size:'+t.w+' '+t.h+';margin:'+t.m+';')+'@page nh{@top-center{content:none}@bottom-center{content:none}}.tp{page:nh}@page cv{margin:0;@top-center{content:none}@bottom-center{content:none}}.cover{page:cv}.pg{width:'+t.w+';min-height:'+t.h+';font-size:'+t.fs+'}@media print{.pg{min-height:0!important;width:auto!important}.pg.cover img{height:100%;object-fit:cover}}';
 let h="";if(s.cover)h+='<div class="pg cover"><img src="'+s.cover+'"></div>';
 h+='<div class="pg tp"><h1>'+esc(title)+'</h1><p>'+esc(s.author)+'</p></div>';
-s.ch.filter(c=>c.k=="ded").forEach(c=>h+='<div class="pg tp">'+c.h+'</div>');
-let body="";s.ch.filter(c=>c.k!="ded").forEach((c,i)=>{css+='.c'+i+'{page:c'+i+'}@page c'+i+hd(q(title)+" — "+q(c.t));body+='<section class="ch c'+i+'"><h2>'+esc(c.t)+'</h2><div class="orn">❦ ❦ ❦</div><div class="body">'+c.h+'</div></section>'});
+expCh().filter(c=>c.k=="ded").forEach(c=>h+='<div class="pg tp">'+c.h+'</div>');
+let body="";expCh().filter(c=>c.k!="ded").forEach((c,i)=>{css+='.c'+i+'{page:c'+i+'}@page c'+i+hd(q(title)+" — "+q(c.t));body+='<section class="ch c'+i+'"><h2>'+esc(c.t)+'</h2><div class="orn">❦ ❦ ❦</div><div class="body">'+c.h+'</div></section>'});
 $("pgs").textContent=css;h+='<div class="pg">'+body+'</div>';
 $("bookwrap").innerHTML=h;document.body.classList.add("pv-on");scrollTo(0,0)};
 $("bk").onclick=()=>document.body.classList.remove("pv-on");
@@ -212,10 +217,10 @@ if(s.cover){const im=await new Promise(r=>{const i=new Image();i.onload=()=>r(i)
 zip.file("word/media/cover.jpg",s.cover.split(",")[1],{base64:true});
 b+=P('<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="'+cx+'" cy="'+cy+'"/><wp:docPr id="1" name="Cover"/><a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:nvPicPr><pic:cNvPr id="0" name="cover.jpg"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="rId9"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="'+cx+'" cy="'+cy+'"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>',{jc:"center"});img='<Relationship Id="rId9" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/cover.jpg"/>'}
 b+=P(R(title,{b:1},60),{pb:!!s.cover,jc:"center",sp:'<w:spacing w:before="4000" w:after="300"/>'});
-const s1='<w:sectPr>'+pg+'<w:bidi/></w:sectPr>';const dd=s.ch.filter(c=>c.k=="ded");const dt=document.createElement("div");dt.innerHTML=dd.map(c=>c.h).join("");const dps=toParas(dt).filter(p=>p.r.length);
+const s1='<w:sectPr>'+pg+'<w:bidi/></w:sectPr>';const EC=expCh();const dd=EC.filter(c=>c.k=="ded");const dt=document.createElement("div");dt.innerHTML=dd.map(c=>c.h).join("");const dps=toParas(dt).filter(p=>p.r.length);
 b+=P(R(s.author,{},32),{jc:"center",sect:dps.length?"":s1});
 dps.forEach((p,i)=>{b+=P(p.r.map(x=>R(x.t,x.f,32)).join(""),{pb:i==0,jc:"center",sp:i==0?'<w:spacing w:before="3500" w:after="200" w:line="400" w:lineRule="auto"/>':'<w:spacing w:after="200" w:line="400" w:lineRule="auto"/>',sect:i==dps.length-1?s1:""})});
-s.ch.filter(c=>c.k!="ded").forEach(c=>{b+=P(R(c.t,{b:1},40),{pb:1,st:"Heading1",jc:"center",ol:1,sp:'<w:spacing w:before="600" w:after="120"/>'});b+=P(R("❦ ❦ ❦",{},28),{jc:"center",sp:'<w:spacing w:after="360"/>'});
+EC.filter(c=>c.k!="ded").forEach(c=>{b+=P(R(c.t,{b:1},40),{pb:1,st:"Heading1",jc:"center",ol:1,sp:'<w:spacing w:before="600" w:after="120"/>'});b+=P(R("❦ ❦ ❦",{},28),{jc:"center",sp:'<w:spacing w:after="360"/>'});
 const d=document.createElement("div");d.innerHTML=c.h;toParas(d).forEach(p=>{b+=P(p.r.map(x=>R(x.t,x.f,o.z)).join(""),{sp:'<w:spacing w:line="360" w:lineRule="auto"/>',ind:'<w:ind w:firstLine="360"/>',jc:p.al=="center"?"center":p.al=="right"?"":"both"})})});
 b+='<w:sectPr><w:headerReference w:type="default" r:id="rId7"/><w:footerReference w:type="default" r:id="rId8"/>'+pg+'<w:pgNumType w:start="1"/><w:bidi/></w:sectPr>';
 const NS='xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"';
@@ -247,7 +252,7 @@ if(a.dataset.a=="s"){n.status=n.status=="done"?"wip":"done";n.updated=Date.now()
 else if(confirm("حذف «"+(n.title||"بدون عنوان")+"» نهائياً؟")){delN(n);db.novels.splice(db.novels.indexOf(n),1);home()}};
 g.appendChild(c)})}
 async function openN(n){if(!n.ch){busy(1);try{await loadCh(n)}catch(e){busy(0);alert("مقدرتش أحمّل الرواية. تأكد من الاتصال وجرّب تاني.");return}busy(0)}
-s=n;$("bt").value=s.title;$("au").value=s.author;$("tp").value=s.tpl;$("cv").textContent=s.cover?"🖼 غلاف ✓":"🖼 اختيار غلاف";$("st").textContent=s.status=="done"?"↩ إعادة للتنفيذ":"✓ تم الانتهاء من الرواية";$("sv").textContent="";document.body.classList.remove("home-on");s.cur=Math.min(s.cur||0,s.ch.length-1);load();scrollTo(0,0)}
+s=n;$("bt").value=s.title;$("au").value=s.author;$("tp").value=s.tpl;$("cv").textContent=s.cover?"🖼 غلاف ✓":"🖼 اختيار غلاف";$("st").textContent=s.status=="done"?"↩ إعادة للتنفيذ":"✓ تم الانتهاء من الرواية";$("sv").textContent="";$("au_on").checked=!!s.auto;$("au_w").value=s.aw||2500;$("au_i").textContent="";document.body.classList.remove("home-on");s.cur=Math.min(s.cur||0,s.ch.length-1);load();scrollTo(0,0)}
 $("back").onclick=()=>{clearTimeout(timer);persist();s=null;home()};
 $("nn").onclick=()=>{const n=mk();db.novels.push(n);syncN(n);tab="wip";openN(n);$("bt").focus()};
 $("st").onclick=()=>{s.status=s.status=="done"?"wip":"done";tab=s.status;s.updated=Date.now();clearTimeout(timer);persist();s=null;home()};
@@ -277,19 +282,36 @@ $("rstf").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!f)r
 $("lg2").src=$("lg").src;
 const sp=$("sp");let spd=0;const hideSp=()=>{if(spd)return;spd=1;sp.classList.add("out");setTimeout(()=>sp.remove(),700)};
 sp.onclick=hideSp;setTimeout(hideSp,2600);
+const ORD=["الأول","الثاني","الثالث","الرابع","الخامس","السادس","السابع","الثامن","التاسع","العاشر","الحادي عشر","الثاني عشر","الثالث عشر","الرابع عشر","الخامس عشر","السادس عشر","السابع عشر","الثامن عشر","التاسع عشر","العشرون"];
+const ordT=n=>"الفصل "+(ORD[n-1]||n);
+const wcP=p=>{const t=p.t.trim();return t?t.split(/\s+/).length:0};
+const isSep=t=>/^[\s*\-–—_#~•·.=]{3,}$/.test(t);
+function autoSplit(ps,T){const out=[];let cur=[],w=0;const push=()=>{if(cur.length){out.push(cur);cur=[];w=0}};
+for(const p of ps){const t=p.t.trim();if(isSep(t)&&w>=T*0.7){push();continue}if(!t&&!cur.length)continue;cur.push(p);w+=wcP(p);if(w>=T)push()}
+push();if(out.length>1){const l=out[out.length-1];if(l.reduce((a,p)=>a+wcP(p),0)<T*0.4){out[out.length-2].push(...l);out.pop()}}
+return out.map(c=>c.map(pHtml).join(""))}
+const normalPs=()=>{const d=document.createElement("div");d.innerHTML=s.ch.filter(c=>!c.k).map(c=>c.h).join("");return toPs(d)};
+function expCh(){if(!s.auto)return s.ch;const T=Math.max(300,s.aw||2500);return[...s.ch.filter(c=>c.k=="ded"),...s.ch.filter(c=>c.k=="intro"),...autoSplit(normalPs(),T).map((h,i)=>({t:ordT(i+1),h}))]}
+const aut=()=>{s.auto=$("au_on").checked;s.aw=Math.max(300,+$("au_w").value||2500);save();
+if(!s.auto){$("au_i").textContent="";return}const ps=normalPs(),n=autoSplit(ps,s.aw).length,tw=ps.reduce((a,p)=>a+wcP(p),0);
+$("au_i").textContent=n<2&&tw>s.aw*2?"النص فقرة واحدة طويلة فمقدرش أقسّمه. افصل بين الفقرات (سطر جديد) وجرّب تاني.":"هيطلع حوالي "+n+" فصل عند التصدير. كتابتك مابتتغيّرش، والتقسيم بيتحسب وقت المعاينة والتصدير بس. وبيتجاهل تقسيم الفصول الحالي."};
+$("au_on").onchange=aut;$("au_w").onchange=aut;
+$("au_c").onclick=()=>{const ch=autoSplit(normalPs(),Math.max(300,+$("au_w").value||2500));if(!ch.length){alert("مفيش نص أقسّمه.");return}
+if(!confirm("هيتحوّل النص لـ"+ch.length+" فصل فعلي بأسماء «الفصل الأول» و«الفصل الثاني» وهكذا، وتقدر تغيّر الأسماء بعدين. تكمل؟"))return;
+s.ch=[...s.ch.filter(c=>c.k=="ded"),...s.ch.filter(c=>c.k=="intro"),...ch.map((h,i)=>({t:ordT(i+1),h}))];s.auto=false;$("au_on").checked=false;$("au_i").textContent="";s.cur=0;load();save()};
 $("lg3").src=$("lg").src;
 const app=initializeApp({apiKey:"AIzaSyA3A92aXsxzbUB-fCxc0fe6P2SFHmtTVgs",authDomain:"rewayati-8a15b.firebaseapp.com",projectId:"rewayati-8a15b",storageBucket:"rewayati-8a15b.firebasestorage.app",messagingSenderId:"910214821467",appId:"1:910214821467:web:24b8921c82f514ade3b17e"});const auth=getAuth(app);
 let FS;try{FS=initializeFirestore(app,{localCache:persistentLocalCache({tabManager:persistentMultipleTabManager()})})}catch(e){FS=getFirestore(app)}
 const chdoc=(n_,i_)=>doc(FS,"users",U.uid,"novels",n_,"chapters",i_);
 const busy=on=>$("ld").style.display=on?"flex":"none";
-async function loadAll(){const q=await getDocs(collection(FS,"users",U.uid,"novels"));db.novels=q.docs.map(d=>{const v=d.data();return{id:d.id,title:v.title||"",author:v.author||"",tpl:v.tpl||"pub",cover:v.cover||"",status:v.status||"wip",updated:v.updated||0,cur:v.cur||0,wc:v.wc||0,chs:v.chs||[],ch:null}})}
+async function loadAll(){const q=await getDocs(collection(FS,"users",U.uid,"novels"));db.novels=q.docs.map(d=>{const v=d.data();return{id:d.id,title:v.title||"",author:v.author||"",tpl:v.tpl||"pub",cover:v.cover||"",status:v.status||"wip",updated:v.updated||0,cur:v.cur||0,wc:v.wc||0,auto:!!v.auto,aw:v.aw||2500,chs:v.chs||[],ch:null}})}
 async function loadCh(n){if(n.ch)return;const q=await getDocs(collection(FS,"users",U.uid,"novels",n.id,"chapters"));const m={};q.docs.forEach(d=>m[d.id]=d.data());
 n.ch=(n.chs||[]).filter(c=>m[c.id]).map(c=>{const v=m[c.id];const o={id:c.id,t:v.t||c.t||"",h:v.h||""};const k=v.k||c.k;if(k)o.k=k;o._s=(o.t||"")+"\u0001"+(o.k||"")+"\u0001"+o.h;return o});
 if(!n.ch.length)n.ch=[{id:cid(),t:"الفصل الأول",h:""}];n._sy=n.ch.map(c=>c.id)}
 async function sync(n){if(!U||!n)return;
 if((n.cover||"").length>900000)throw new Error("bigcover");
 if(n.ch){n.ch.forEach(c=>{if(!c.id)c.id=cid()});n.wc=wc1(n);n.chs=n.ch.map(c=>({id:c.id,t:c.t||"",k:c.k||""}))}
-const ops=[[0,doc(FS,"users",U.uid,"novels",n.id),{title:n.title||"",author:n.author||"",tpl:n.tpl||"pub",cover:n.cover||"",status:n.status||"wip",updated:n.updated||Date.now(),cur:n.cur||0,wc:n.wc||0,chs:n.chs||[]}]];const marks=[];
+const ops=[[0,doc(FS,"users",U.uid,"novels",n.id),{title:n.title||"",author:n.author||"",tpl:n.tpl||"pub",cover:n.cover||"",status:n.status||"wip",updated:n.updated||Date.now(),cur:n.cur||0,wc:n.wc||0,auto:!!n.auto,aw:n.aw||2500,chs:n.chs||[]}]];const marks=[];
 if(n.ch){for(const c of n.ch){const sg=(c.t||"")+"\u0001"+(c.k||"")+"\u0001"+c.h;if(c._s!==sg){if(new Blob([c.h]).size>950000)throw new Error("big");ops.push([0,chdoc(n.id,c.id),{t:c.t||"",k:c.k||"",h:c.h}]);marks.push([c,sg])}}
 (n._sy||[]).filter(i=>!n.ch.some(c=>c.id==i)).forEach(i=>ops.push([1,chdoc(n.id,i)]))}
 const ps=[];for(let i=0;i<ops.length;i+=400){const b=writeBatch(FS);ops.slice(i,i+400).forEach(([t,r,d])=>t?b.delete(r):b.set(r,d));ps.push(b.commit())}
@@ -318,6 +340,7 @@ $("del").onclick=async()=>{if(!confirm("هتحذف حسابك وكل روايا�
 try{if(U.providerData.some(p=>p.providerId=="password")){const p=prompt("اكتب كلمة السر الحالية للتأكيد");if(!p)return;await reauthenticateWithCredential(U,EmailAuthProvider.credential(U.email,p))}else await reauthenticateWithPopup(U,new GoogleAuthProvider());
 busy(1);await wipeAccount();await deleteUser(U);busy(0)}catch(e){busy(0);alert("تعذّر حذف الحساب: "+am(e))}};
 document.addEventListener("visibilitychange",()=>{if(document.hidden)flush()});addEventListener("pagehide",flush);
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 onAuthStateChanged(auth,async u=>{U=u;
 if(!u){db={novels:[]};s=null;$("al").hidden=true;$("af").hidden=false;$("em1").value="";$("pw1").value="";document.body.classList.add("auth-on");return}
 $("af").hidden=true;$("al").hidden=false;$("al").textContent="جارٍ تحميل رواياتك…";

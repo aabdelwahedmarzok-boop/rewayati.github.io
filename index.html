@@ -64,6 +64,41 @@ body.auth-on #home,body.auth-on header,body.auth-on main,body.auth-on #pv{displa
 .err{color:#b3261e;min-height:22px;margin:10px 0}.err.ok{color:#2e7d32}
 #ld{position:fixed;inset:0;background:#0007;color:#fff;display:none;align-items:center;justify-content:center;z-index:90;font-size:18px}
 #em{color:var(--mut);font-size:13px;display:block}
+#stv{display:none;max-width:900px;margin:0 auto;padding:16px}
+body.st-on #stv{display:block}
+body.st-on #home,body.st-on header,body.st-on main,body.st-on #pv,body.st-on #auth{display:none!important}
+.sc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.sc div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:14px;color:var(--mut)}
+.sc b{display:block;font-size:24px;color:var(--acc)}
+.bars{display:flex;gap:6px;align-items:flex-end;margin:12px 0}
+.bars div{flex:1;text-align:center;font-size:12px;color:var(--mut)}
+.bars i{display:block;background:var(--acc);border-radius:6px 6px 0 0;margin-bottom:4px}
+.pb{background:var(--line);border-radius:10px;height:14px;overflow:hidden}.pb i{display:block;height:100%;background:var(--acc)}
+table.gt{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+table.gt td,table.gt th{border-bottom:1px solid var(--line);padding:8px;text-align:right}
+#stv label{display:block;margin:12px 0 4px;color:var(--mut);font-size:13px}
+#stv input{background:var(--bg);border:1px solid var(--line);border-radius:8px}
+@media print{#stv{display:none!important}}
+#pf{position:fixed;inset:0;background:#0006;z-index:80;display:none;align-items:flex-end;justify-content:center}
+#pf.on{display:flex}
+.pfb{background:var(--panel);width:min(680px,100%);max-height:58vh;overflow:auto;border-radius:16px 16px 0 0;padding:14px;box-shadow:0 -4px 20px #0005}
+.pfh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pfa{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.pfi{border-bottom:1px solid var(--line);padding:8px 0;display:flex;gap:6px;align-items:center}
+.pfi small{color:var(--mut);display:block}.pfi mark{background:#ffd54f88;color:inherit}.pfi .btn{padding:5px 9px;font-size:13px}
+@media print{#pf{display:none!important}}
+#kgv{display:none;max-width:900px;margin:0 auto;padding:16px}
+body.kg-on #kgv{display:block}
+body.kg-on #home,body.kg-on header,body.kg-on main,body.kg-on #pv,body.kg-on #auth,body.kg-on #stv{display:none!important}
+@media print{#kgv{display:none!important}}
+.kg details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 14px}
+.kg summary{cursor:pointer;padding:12px 0;font-weight:bold;color:var(--acc);font-size:17px}
+.kg ul,.kg ol{padding-inline-start:22px;line-height:1.9;margin:6px 0 12px}
+.kg p{line-height:1.9}
+.kg .tg{font-size:11px;padding:1px 7px;border-radius:8px;margin-inline-start:6px;font-weight:normal;white-space:nowrap}
+.kg .o{background:#2e7d3226;color:#2e7d32}.kg .x{background:#b3261e22;color:#b3261e}
+.kg .kn{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kg a{color:var(--acc);word-break:break-all}
 .tl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.tl button{font-size:14px}
 #home{max-width:900px;margin:auto;padding:16px}
 .hh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -109,10 +144,206 @@ details button{width:100%;margin-top:8px}
 <p id="ae" class="err"></p>
 </div></div>
 <div id="ld">جارٍ التحميل…</div>
+<div id="kgv"><button class="btn g" id="kgk">← رجوع</button><h2 style="color:var(--acc)">📘 دليل النشر على Amazon KDP</h2><div id="kgc"></div></div>
+<template id="kgt"><div class="kg">
+<p class="kn"><b>دليل النشر على Amazon KDP للكاتب العربي</b><br>
+آخر مراجعة: 3 أكتوبر 2026، على صفحات المساعدة الرسمية لـKDP ومصادر أخرى. كل معلومة موسومة بـ<b class="tg o">رسمي</b> إن جاءت من صفحات KDP نفسها، أو <b class="tg x">خارجي</b> إن جاءت من مصادر غير رسمية فتحقق منها بنفسك. KDP يغيّر سياساته باستمرار، فارجع إلى صفحات المساعدة الرسمية قبل أي قرار مالي أو قانوني. هذا الدليل ليس استشارة قانونية أو ضريبية. واجهة KDP تتوفر بالإنجليزية وبعض اللغات الأوروبية، ولذلك كتبنا المصطلحات الإنجليزية بين قوسين.</p>
+
+<details open><summary>1) أهم ما يجب أن تعرفه أولاً</summary>
+<ul>
+<li><b>العربية على KDP للكتب الإلكترونية فقط (Kindle eBook).</b> النشر الورقي بالعربية غير متاح حالياً. <b class="tg o">رسمي</b></li>
+<li>KDP يقول إنه ما زال يحسّن دعم الكتب العربية، وقد تظهر أخطاء عند رفع الملف. <b class="tg o">رسمي</b></li>
+<li>اللغات المتاحة للنشر الورقي على KDP تتغيّر، فتحقق من صفحة «Book Supported Languages» قبل أن تخطط لنسخة ورقية.</li>
+<li>قالب «6×9 بوصة» في تطبيق روايتي مخصص للطباعة والمعاينة، ولا يعني أنك تستطيع نشر نسخة ورقية عربية على KDP.</li>
+<li>نشر الكتاب على KDP لا يضمن مبيعات. التسويق جزء كبير من العمل.</li>
+</ul></details>
+
+<details><summary>2) إنشاء الحساب وتوثيق الهوية</summary>
+<ol>
+<li>ادخل إلى kdp.amazon.com بحساب أمازون، أو أنشئ حساباً جديداً.</li>
+<li>أدخل بياناتك الشخصية كما هي في هويتك الرسمية. تطابق الاسم والبلد مع الهوية مهم لتوثيق الهوية والدفع، وفي KDP صفحة مخصصة لحالة اختلافهما (What if my account name or country changes or is different from my ID?). <b class="tg o">رسمي</b></li>
+<li>قد يُطلب منك توثيق الهوية (Verify your identity). تجد في صفحات المساعدة قائمة الهويات المقبولة وطريقة تصوير الهوية. <b class="tg o">رسمي</b></li>
+<li>فعّل التحقق بخطوتين (Two-Step Verification) لحماية حسابك.</li>
+<li>احذر الرسائل التي تنتحل صفة KDP أو تطلب بياناتك. في KDP صفحة عن أمان الحساب وتجنب الاحتيال (Account security and avoiding scams). <b class="tg o">رسمي</b></li>
+<li>النشر على KDP لا يتطلب دفع مال لمنصة KDP نفسها. إن طلب منك طرف خارجي مالاً مقابل «فتح حساب» أو «ضمان النشر»، فاسأل وتحقق قبل أن تدفع.</li>
+</ol></details>
+
+<details><summary>3) المعلومات الضريبية (Tax Information)</summary>
+<ul>
+<li>أمازون شركة أمريكية، وتطلب من كل كاتب إكمال مقابلة ضريبية (Tax Interview) داخل الحساب. تجدها من قسم «Tax Information». <b class="tg x">خارجي</b></li>
+<li>الكاتب غير الأمريكي يملأ نموذج <b>W-8BEN</b> إن كان فرداً، أو W-8BEN-E إن كان شركة. <b class="tg x">خارجي</b></li>
+<li>بدون إكمالها يُطبَّق استقطاع افتراضي نسبته 30% على أرباح المبيعات الأمريكية. <b class="tg x">خارجي</b></li>
+<li>الاتفاقيات الضريبية بين الولايات المتحدة وبلد إقامتك قد تخفض هذه النسبة. <b>لم أتحقق من النسبة الخاصة ببلدك</b>، فراجعها داخل المقابلة نفسها ومع محاسب.</li>
+<li>النماذج الضريبية قد تنتهي صلاحيتها ويطلب منك تجديدها. إن انتهت قد تعود نسبة الاستقطاع إلى 30%. <b class="tg x">خارجي</b></li>
+<li>التزاماتك الضريبية في بلدك على دخل الكتب مسألة منفصلة تماماً، واستشر فيها محاسباً مختصاً.</li>
+</ul></details>
+
+<details><summary>4) كيف تستلم أرباحك (Payments)</summary>
+<ul>
+<li>طرق الدفع تعتمد على <b>مكان بنكك</b>: التحويل المباشر (EFT) أو الشيك أو التحويل البنكي الدولي (Wire). <b class="tg o">رسمي</b></li>
+<li>PayPal وAmazon Payments غير متاحين كوسائل دفع على KDP. <b class="tg o">رسمي</b></li>
+<li>التحويل البنكي الدولي له حد أدنى للدفع، وقد يخصم بنكك رسوماً وتتدخل أسعار الصرف. <b class="tg o">رسمي</b></li>
+<li>صفحة KDP الخاصة بالعربية تقول إن من يختار التحويل إلى بنك محلي في السعودية وعُمان والبحرين والكويت والمغرب يُدفع له بالعملة المحلية. <b class="tg o">رسمي</b></li>
+<li>صفحة «KDP Payment Options» تدرج مصر ضمن التحويل البنكي الدولي بعملات محددة. تحقق من الصفحة نفسها من العملة والحد الأدنى قبل أن تفتح الحساب البنكي. <b class="tg o">رسمي</b></li>
+<li>في صفحات مساعدة KDP قسم عن «برنامج مزوّد خدمات الدفع» (Payment Service Provider Program). اقرأه لتعرف إن كان خياراً متاحاً لك، ولا تعتمد على مقالات قديمة عن خدمات وسيطة.</li>
+<li>متى يتم الدفع؟ راجع صفحة «When will I get paid?». <b class="tg o">رسمي</b></li>
+</ul></details>
+
+<details><summary>5) تجهيز مخطوطة الكتاب العربي (الإلكتروني)</summary>
+<p>هذه توصيات KDP الخاصة بالكتب العربية عند رفع ملف Word: <b class="tg o">رسمي</b></p>
+<ol>
+<li><b>صفحة العنوان:</b> فيها عنوان الكتاب واسم المؤلف، ويجب أن يطابقا <b>تماماً</b> ما تكتبه في إعدادات الكتاب. عدم التطابق من أكثر أسباب الرفض.</li>
+<li><b>الفقرات:</b> مسافة أول السطر 0.2 بوصة (5 ملم)، والتباعد قبل وبعد الفقرة صفر نقطة، وتباعد الأسطر مفرد (Single).</li>
+<li><b>الفصول:</b> كل فصل يبدأ بفاصل صفحة (Page Break).</li>
+<li><b>الفهرس النشط:</b> طبّق نمط Heading 1 على عناوين الفصول، ثم أنشئ جدول محتويات تلقائياً بدون أرقام صفحات، وضع على عنوان «المحتويات» إشارة مرجعية (Bookmark) باسم <b>toc</b>.</li>
+<li><b>اتجاه النص:</b> من اليمين إلى اليسار. يرفض KDP الملفات المضبوطة من اليسار إلى اليمين. أضف العربية في لغات التحرير في Word.</li>
+<li><b>نص لا صور:</b> يجب أن يكون الكتاب نصاً قابلاً لتغيير حجم الخط (Reflowable)، لا صفحات ممسوحة ضوئياً.</li>
+<li><b>لا إعلانات:</b> لا إعلانات ولا باركود ولا روابط لمتاجر كتب أو مواقع منافسة داخل الكتاب.</li>
+<li><b>ابحث عن الأخطاء الشائعة:</b> مربعات فارغة بدل الحروف، وأرقام مكان حروف، وتشكيل في غير موضعه، ومسافات غير منتظمة بين حروف الكلمة، وحرف زائد داخل الكلمة.</li>
+<li><b>المعاينة:</b> افتح الملف في Kindle Previewer (برنامج مجاني من أمازون) وشاهده كما يظهر على الهاتف واللوحي وقارئ كيندل.</li>
+<li><b>الصيغ المقبولة:</b> غالباً Word (DOCX) أو EPUB أو KPF من برنامج Kindle Create. <b class="tg x">خارجي</b> راجع صفحة «What file formats are supported for eBook manuscripts?».</li>
+</ol>
+<p><b>عن ملف Word الذي تصدّره روايتي:</b> هو مصمم للطباعة والمراجعة (رأس وتذييل وترقيم صفحات وتباعد أسطر 1.5). قبل رفعه كنسخة إلكترونية لـKDP، افتحه في Word وعدّل التباعد إلى مفرد، وتأكد من فاصل الصفحة بين الفصول، وأضف الفهرس النشط بالطريقة أعلاه، وأزل الرأس والتذييل.</p>
+</details>
+
+<details><summary>6) الغلاف</summary>
+<ul>
+<li>الصيغة: JPEG أو TIFF. <b class="tg o">رسمي</b></li>
+<li>المقاس المثالي: ارتفاع 2560 بكسل × عرض 1600 بكسل. <b class="tg o">رسمي</b></li>
+<li>الحد الأدنى: ارتفاع 1000 × عرض 625 بكسل. والحد الأقصى لأي بُعد 10000 بكسل. <b class="tg o">رسمي</b></li>
+<li>يُفضَّل 300 PPI للجودة. <b class="tg o">رسمي</b></li>
+<li>الكتاب الإلكتروني يحتاج غلاف الواجهة فقط، بدون كعب أو غلاف خلفي.</li>
+<li>يُفضَّل نمط ألوان RGB، وألا يتجاوز الملف 50 ميغابايت. <b class="tg x">خارجي</b></li>
+<li>اجعل العنوان واسمك مقروءين وهما صغيران، لأن أغلب القرّاء يرون الغلاف مصغراً.</li>
+<li>تأكد أن لديك حق استخدام كل صورة وخط في الغلاف.</li>
+<li>إن أنشأت الغلاف أو جزءاً منه بأداة ذكاء اصطناعي، فاقرأ القسم التالي.</li>
+</ul></details>
+
+<details><summary>7) الذكاء الاصطناعي: متى يجب أن تُعلن عنه؟</summary>
+<ul>
+<li>يطلب KDP إعلامه بالمحتوى <b>المُولَّد بالذكاء الاصطناعي</b> (نصوص أو صور أو ترجمات) عند نشر كتاب جديد أو تعديل كتاب منشور. وتشمل الصور المولَّدة صور الغلاف والصور الداخلية. <b class="tg o">رسمي</b></li>
+<li>إن استخدمت أداة ذكاء اصطناعي لإنشاء المحتوى نفسه فهو «مولَّد»، حتى لو حرّرته كثيراً بعد ذلك. <b class="tg o">رسمي</b></li>
+<li>إن كتبت المحتوى بنفسك واستخدمت الأدوات للتحرير أو التحسين أو تدقيق الأخطاء فهو «مُساعَد»، ولا يلزم الإعلان عنه. <b class="tg o">رسمي</b></li>
+<li>أنت المسؤول عن التأكد أن كل محتوى مولَّد أو مُساعَد يلتزم بإرشادات KDP وحقوق الملكية الفكرية. <b class="tg o">رسمي</b></li>
+<li>إن شككت في تصنيف حالتك، فاقرأ صفحة «Content Guidelines» نفسها، ولا تجازف بإجابة غير صحيحة.</li>
+</ul></details>
+
+<details><summary>8) إعداد الكتاب على KDP (Title Setup)</summary>
+<p>تتوزع صفحة إعداد الكتاب الإلكتروني (Kindle eBook) على ثلاث مراحل عامة: تفاصيل الكتاب، ثم المحتوى، ثم التسعير.</p>
+<ol>
+<li><b>تفاصيل الكتاب (Details):</b> اختر اللغة <b>Arabic</b> من القائمة. اكتب العنوان واسم المؤلف والوصف بالعربية، لأن لغة الإعداد ولغة الكتاب يجب أن تتطابقا. <b class="tg o">رسمي</b></li>
+<li>اكتب وصفاً جذاباً وصادقاً للكتاب (Book Description)، ولا تَعِد بما ليس في الكتاب.</li>
+<li>اختر الكلمات المفتاحية (Keywords) والتصنيفات (Categories) التي يبحث بها القارئ فعلاً، وراجع صفحة «Metadata Guidelines» لأن عنوانك ووصفك يخضعان لقواعد.</li>
+<li><b>الحقوق (Publishing Rights):</b> أنت صاحب الحقوق. لا تنشر محتوى منقولاً من غيرك.</li>
+<li><b>المحتوى (Content):</b> ارفع المخطوطة والغلاف، ثم أجب عن سؤال الذكاء الاصطناعي بصدق، ثم راجع المعاينة (Previewer) قبل المتابعة.</li>
+<li>الكتاب الإلكتروني لا يحتاج رقم ISBN، فأمازون تعطيه معرّفاً خاصاً بها (ASIN). <b class="tg x">خارجي</b></li>
+<li><b>التسعير (Pricing):</b> اختر الأسواق والسعر وخيار الأرباح، وهذا موضوع القسم التالي.</li>
+</ol></details>
+
+<details><summary>9) التسعير والأرباح</summary>
+<ul>
+<li>للكتب الإلكترونية خياران: أرباح 35% وأرباح 70%. <b class="tg o">رسمي</b></li>
+<li>خيار 70% له نطاق أسعار محدد، ففي Amazon.com بالدولار يكون السعر بين 2.99 و9.99. وللمتاجر الأخرى نطاقاتها بالعملة المحلية في صفحة «eBook List Price Requirements». <b class="tg o">رسمي</b></li>
+<li>خيار 70% يطبَّق في «الأسواق المتاحة» فقط، والمبيعات خارجها تُحسب بنسبة 35%. وعند التسجيل في KDP Select تُضاف البرازيل واليابان والمكسيك والهند إلى مبيعات 70%. <b class="tg o">رسمي</b></li>
+<li>صفحة KDP الخاصة بالعربية تقول: سجّل في KDP Select لتكسب حتى 70% من المبيعات. لذلك تحقق من شروط الأرباح لكتابك العربي داخل صفحة التسعير قبل أن تقرر. <b class="tg o">رسمي</b></li>
+<li><b>المعادلة:</b> في خيار 35% الربح = 35% × (السعر − الضريبة المطبقة). وفي خيار 70% الربح = 70% × (السعر − الضريبة − تكلفة التوصيل). <b class="tg o">رسمي</b></li>
+<li>تكلفة التوصيل تعتمد على حجم ملف الكتاب. بعض المصادر تذكر رقماً بالدولار لكل ميغابايت في السوق الأمريكي، لكنه قابل للتغيّر، فراجع صفحة «eBook Royalties». لذلك الكتب الخالية من الصور الثقيلة أربح في خيار 70%.</li>
+<li>KDP يحتفظ بحق تحديد سعر البيع للمستهلك، وقد يختلف عن السعر الذي حددته. في خيار 70% تُحسب الأرباح من سعر البيع للمستهلك، وفي خيار 35% من السعر الذي حددته. <b class="tg o">رسمي</b></li>
+<li>لا يمكن جعل سعر الكتاب مجانياً من إعداد السعر مباشرة. <b class="tg o">رسمي</b></li>
+<li>جرّب حاسبة الأرباح (Royalties Estimator) في قسم التقارير لتعرف رقمك الحقيقي.</li>
+</ul></details>
+
+<details><summary>10) KDP Select وKindle Unlimited</summary>
+<ul>
+<li>KDP Select برنامج اختياري. عند التسجيل تلتزم بأن يكون كتابك الإلكتروني <b>حصرياً على أمازون لمدة 90 يوماً</b>، والنسخة الورقية غير مشمولة. <b class="tg x">خارجي</b></li>
+<li>يتجدد التسجيل تلقائياً كل 90 يوماً ما لم تُلغِ التجديد. <b class="tg x">خارجي</b></li>
+<li>مقابل ذلك يدخل كتابك في Kindle Unlimited، وتحصل على نصيب من «الصندوق العالمي» بحسب الصفحات التي يقرؤها المشتركون (KENP). <b class="tg o">رسمي</b></li>
+<li>الأدوات الترويجية: أيام مجانية (حتى 5 أيام لكل فترة تسجيل بحسب مصادر خارجية) وصفقات العد التنازلي (Kindle Countdown Deals). <b class="tg x">خارجي</b></li>
+<li>شروط صفقات العد التنازلي: أن يكون الكتاب مسجلاً 30 يوماً على الأقل، وألا يتغير سعره 30 يوماً قبل الصفقة و14 يوماً بعدها، وواحدة لكل فترة تسجيل. <b class="tg o">رسمي</b></li>
+<li><b>متى لا تسجّل؟</b> إن أردت بيع كتابك الإلكتروني في متاجر أخرى أو على موقعك أو عبر موزّع آخر.</li>
+<li>قرار التسجيل يعتمد على جمهورك وسوقك. جرّب 90 يوماً وقارن، ولا تتوقع نتيجة مضمونة.</li>
+</ul></details>
+
+<details><summary>11) النشر والمراجعة</summary>
+<ol>
+<li>بعد إكمال الصفحات الثلاث اضغط Publish. يراجع KDP الكتاب قبل ظهوره للبيع.</li>
+<li>المراجعة تستغرق عادة من 12 إلى 72 ساعة حسب مصادر خارجية، وقد تطول إن احتاج الكتاب مراجعة إضافية. <b class="tg x">خارجي</b> وفي KDP صفحة «Timelines» بالمواعيد الرسمية. فلا تحدد موعد إطلاق قبل 72 ساعة على الأقل.</li>
+<li>راقب حالة الكتاب في «Bookshelf» (Book Status). إن رُفض ستصلك رسالة بالسبب، فعدّل الملف وأعد الرفع.</li>
+<li>يمكنك تعديل الكتاب بعد النشر (Update your book). التعديلات تخضع لمراجعة جديدة.</li>
+<li>يمكنك جدولة موعد الإصدار أو ضبط طلب مسبق (Pre-order) إن أردت. <b class="tg o">رسمي</b></li>
+</ol></details>
+
+<details><summary>12) بعد النشر</summary>
+<ul>
+<li><b>صفحة المؤلف (Author Central):</b> أنشئ صفحتك على author.amazon.com لتعرّف القرّاء بنفسك وتجمع كتبك. <b class="tg o">رسمي</b></li>
+<li><b>التقارير (Reports):</b> تتابع منها المبيعات والأرباح وصفحات KENP.</li>
+<li><b>الترويج:</b> صفحة «Ways to Promote Your Book» تشرح الأدوات المتاحة. وإعلانات KDP (Advertising) قد لا تغطي كل اللغات والأسواق، فتحقق من إتاحتها لكتابك.</li>
+<li><b>التقييمات:</b> لا تشترِ تقييمات ولا تطلبها بمقابل ولا تكتب تقييمات مزيفة، فهذا يعرّض حسابك للإغلاق.</li>
+<li><b>بناء جمهورك:</b> قراؤك الأوائل يأتون غالباً من مجتمعك: مواقع التواصل، ومنصات القراءة، والمجموعات الأدبية.</li>
+</ul></details>
+
+<details><summary>13) أخطاء شائعة تسبب رفض الكتاب العربي</summary>
+<ul>
+<li>اتجاه الملف من اليسار إلى اليمين.</li>
+<li>عدم تطابق العنوان أو اسم المؤلف بين صفحة العنوان وإعدادات الكتاب.</li>
+<li>اللغة المختارة في الإعداد غير العربية، أو تفاصيل الكتاب بلغة غير لغة الكتاب.</li>
+<li>مربعات فارغة بدل الحروف، أو حروف وأرقام في غير مكانها.</li>
+<li>إعلانات أو روابط لمتاجر منافسة داخل الكتاب.</li>
+<li>كتاب ممسوح ضوئياً بدل نص قابل لتغيير الحجم.</li>
+<li>غلاف لا يحقق المقاسات.</li>
+<li>إجابة غير صحيحة عن سؤال الذكاء الاصطناعي.</li>
+</ul></details>
+
+<details><summary>14) والنسخة الورقية؟</summary>
+<ul>
+<li>بما أن KDP لا يتيح الطباعة العربية حالياً <b class="tg o">رسمي</b>، فالنسخة الورقية تحتاج مساراً آخر: مطبعة محلية أو دار نشر أو خدمة طباعة عند الطلب.</li>
+<li>لم أتحقق من خدمة طباعة عند الطلب بعينها تدعم العربية، فاسأل الخدمة صراحة عن دعم الكتابة من اليمين إلى اليسار، وطريقة تجهيز الملف والغلاف.</li>
+<li>تحقق في بلدك من متطلبات الإيداع والترقيم الدولي (ISBN) للنسخ الورقية. في مصر هي حسب علمي جهة دار الكتب والوثائق القومية، فتأكد من الجهة وإجراءاتها.</li>
+<li>تأكد من شروط أي عقد قبل التوقيع: مدة الحقوق، ونسبة الأرباح، والتوزيع، ومن يملك الملف النهائي.</li>
+</ul></details>
+
+<details><summary>15) قائمة تحقق قبل الضغط على «نشر»</summary>
+<ul style="list-style:none;padding-inline-start:4px">
+<li>☐ الحساب موثَّق والتحقق بخطوتين مفعّل.</li>
+<li>☐ المقابلة الضريبية مكتملة ونسبة الاستقطاع مفهومة.</li>
+<li>☐ حساب الدفع مضاف وتأكدت من عملته وحده الأدنى.</li>
+<li>☐ اتجاه الملف من اليمين لليسار، والفهرس النشط يعمل.</li>
+<li>☐ العنوان واسم المؤلف في الملف مطابقان للإعداد.</li>
+<li>☐ راجعت الكتاب في Kindle Previewer على هاتف وقارئ.</li>
+<li>☐ دققت الأخطاء الإملائية والترقيم.</li>
+<li>☐ الغلاف 2560×1600 تقريباً وقابل للقراءة مصغراً.</li>
+<li>☐ أجبت عن سؤال الذكاء الاصطناعي بصدق.</li>
+<li>☐ اخترت السعر وخيار الأرباح عن فهم.</li>
+<li>☐ قررت بشأن KDP Select بعد قراءة شروطه.</li>
+<li>☐ حفظت نسخة احتياطية من الكتاب.</li>
+</ul></details>
+
+<details><summary>16) روابط رسمية من KDP</summary>
+<ul>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/GUQT4C8J6RR6V8TY" target="_blank" rel="noopener">النشر باللغة العربية (Arabic)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200673300" target="_blank" rel="noopener">اللغات المدعومة (Book Supported Languages)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200620010" target="_blank" rel="noopener">إنشاء حساب (Create a KDP Account)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/GWAJ6TKCFEA6D8SL" target="_blank" rel="noopener">أمان الحساب وتجنب الاحتيال</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G201723290" target="_blank" rel="noopener">المعلومات الضريبية (Tax Information)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/GJD7DFFX6X88AK46" target="_blank" rel="noopener">طرق الدفع (KDP Payment Options)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/GK2MKZUL6U3SFBPZ" target="_blank" rel="noopener">متى أستلم أرباحي؟</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200645690" target="_blank" rel="noopener">شروط غلاف الكتاب الإلكتروني</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G202131170" target="_blank" rel="noopener">Kindle Previewer</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200672390" target="_blank" rel="noopener">إرشادات المحتوى (Content Guidelines)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200634560" target="_blank" rel="noopener">شروط سعر الكتاب الإلكتروني</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200644210" target="_blank" rel="noopener">أرباح الكتب الإلكترونية</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200798990" target="_blank" rel="noopener">KDP Select</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G202173620" target="_blank" rel="noopener">المواعيد (Timelines)</a></li>
+<li><a href="https://kdp.amazon.com/en_US/help/topic/G200644310" target="_blank" rel="noopener">Author Central</a></li>
+</ul></details>
+</div>
+</template>
+<div id="pf"><div class="pfb"><div class="pfh"><b>🔍 تدقيق بسيط</b><button class="btn g" id="pfx">✕</button></div><div id="pfs"></div><div class="pfa"><button class="btn" id="pfa">صحّح الكل في الفصل</button><button class="btn g" id="pfn">صحّح التلقائي في الرواية كلها</button></div><div id="pfl"></div><p style="color:var(--mut);font-size:12px">ده تدقيق بسيط على الجهاز، مابيتبعتش لأي سيرفر. مش بديل للمراجعة النحوية البشرية، وممكن يفوّت أخطاء أو ينبّه على حاجة مقصودة.</p></div></div>
+<div id="stv"><button class="btn g" id="stk">← رجوع</button><h2 style="color:var(--acc)">إحصائياتي ودليل الأطوال</h2><div class="tabs" id="stt"><button data-v="st" class="on">إحصائياتي</button><button data-v="gd">دليل الأطوال</button></div><div id="stc"></div></div>
 <div id="home">
 <div class="hh"><div><h1><img class="lg" id="lg2" alt="">روايتي</h1><small id="em"></small></div><button class="btn g" id="th2">🌙</button></div>
 <div class="tabs"><button data-t="wip" class="on">قيد التنفيذ <em id="n1"></em></button><button data-t="done">مكتملة <em id="n2"></em></button></div>
-<div class="tl"><button class="btn g" id="imp">📥 استيراد من Word</button><button class="btn g" id="bak">💾 نسخة احتياطية</button><button class="btn g" id="rst">♻ استرجاع</button><button class="btn g" id="out">🚪 تسجيل الخروج</button><button class="btn g" id="del">🗑 حذف حسابي</button><input type="file" id="impf" accept=".docx" hidden><input type="file" id="rstf" accept=".json,application/json" hidden></div>
+<div class="tl"><button class="btn g" id="imp">📥 استيراد من Word</button><button class="btn g" id="bak">💾 نسخة احتياطية</button><button class="btn g" id="rst">♻ استرجاع</button><button class="btn g" id="stb">📊 إحصائيات ودليل الأطوال</button><button class="btn g" id="kgb">📘 دليل النشر على KDP</button><button class="btn g" id="out">🚪 تسجيل الخروج</button><button class="btn g" id="del">🗑 حذف حسابي</button><input type="file" id="impf" accept=".docx" hidden><input type="file" id="rstf" accept=".json,application/json" hidden></div>
 <div id="grid"></div>
 <button class="btn fab" id="nn">+ رواية جديدة</button>
 </div>
@@ -127,13 +358,15 @@ details button{width:100%;margin-top:8px}
 <ul class="chs" id="cl"></ul>
 <button class="btn g" id="add" style="width:100%">+ فصل جديد</button>
 <div style="display:flex;gap:6px;margin-top:6px"><button class="btn g" data-f="ded" style="flex:1">+ إهداء</button><button class="btn g" data-f="intro" style="flex:1">+ مقدمة</button></div><button class="btn g" id="split" style="width:100%;margin-top:6px">✂ تقسيم تلقائي للفصول</button>
+<button class="btn g" id="pf_o" style="width:100%;margin-top:6px">🔍 تدقيق إملائي وترقيمي بسيط</button>
 <details><summary>⚙ بيانات الرواية</summary>
 <label>المؤلف</label><input id="au" placeholder="اسم المؤلف">
-<label>القالب</label><select id="tp"><option value="pub">تنسيق دار نشر عربي</option><option value="kdp">تنسيق Amazon KDP</option></select>
+<label>القالب</label><select id="tp"><option value="pub">تنسيق دار نشر عربي</option><option value="kdp">قالب 6×9 بوصة (مقاس KDP الورقي)</option></select>
 <label><input type="checkbox" id="au_on" style="width:auto;margin-inline-end:6px">قسّم الرواية لفصول تلقائياً عند التصدير</label>
 <label>عدد الكلمات التقريبي في الفصل</label><input id="au_w" type="number" min="300" max="20000" step="100" value="2500">
 <small id="au_i" style="color:var(--mut);display:block;margin-top:4px"></small>
 <button class="btn g" id="au_c">حوّل لفصول فعلية</button>
+<label>نوع العمل وهدفه</label><select id="gt"></select><label>الهدف بالكلمات</label><input id="gw" type="number" min="0" step="500">
 <button class="btn g" id="cv">🖼 اختيار غلاف</button><input type="file" id="cf" accept="image/*" hidden>
 <button class="btn g" id="th">🌙 الوضع الليلي</button>
 <button class="btn" id="st">✓ تم الانتهاء من الرواية</button>
@@ -148,7 +381,7 @@ details button{width:100%;margin-top:8px}
 <button data-c="justifyRight">يمين</button><button data-c="justifyCenter">وسط</button><button data-c="justifyFull">ضبط</button>
 </div>
 <div id="ed" contenteditable="true"></div>
-<div class="stat"><span id="wc"></span><span id="sv"></span></div>
+<div class="stat"><span id="wc"></span><span id="sv"></span></div><div class="stat"><span id="td"></span><span id="gp"></span></div>
 </section>
 </main>
 <div id="pv"><div class="tb" style="text-align:center;margin-bottom:12px"><button class="btn g" id="bk">← رجوع للمحرر</button> <button class="btn" id="pr">طباعة / حفظ PDF</button> <button class="btn" id="dx">تصدير Word</button></div><div id="bookwrap"></div></div>
@@ -166,15 +399,15 @@ let U=null,dirty=0,pend=0;
 const cw=c=>{if(c._wh!==c.h){const d=document.createElement("div");d.innerHTML=c.h;const x=d.innerText.trim();c._w=x?x.split(/\s+/).length:0;c._wh=c.h}return c._w};
 function save(){if(s)s.updated=Date.now();dirty=1;$("sv").textContent="جارٍ الحفظ…";clearTimeout(timer);timer=setTimeout(flush,3000)}
 function flush(){clearTimeout(timer);if(dirty&&s){dirty=0;syncN(s)}}
-function persist(){if(s){dirty=0;clearTimeout(timer);syncN(s)}return 1}
-function cnt(){const t=$("ed").innerText.trim();const w=t?t.split(/\s+/).length:0;$("wc").textContent=w+" كلمة · "+t.length+" حرف · الرواية كلها: "+wc1(s)+" كلمة"}
+function persist(){flushSt();if(s){dirty=0;clearTimeout(timer);syncN(s)}return 1}
+function cnt(){const t=$("ed").innerText.trim();const w=t?t.split(/\s+/).length:0;curC=t.length;curW=w;$("wc").textContent=w+" كلمة · "+t.length+" حرف · الرواية كلها: "+wc1(s)+" كلمة"}
 function list(){const ul=$("cl");ul.innerHTML="";s.ch.forEach((c,i)=>{const li=document.createElement("li");li.draggable=true;if(i==s.cur)li.className="on";li.innerHTML='<i>⠿</i><span></span><b title="أعلى">▲</b><b title="أسفل">▼</b><b title="حذف">✕</b>';li.querySelector("span").textContent=(c.k=="ded"?"🎁 ":c.k=="intro"?"📜 ":"")+(c.t||"بدون عنوان");
 li.onclick=e=>{const b=e.target.closest("b");if(b){const k=b.title;if(k=="حذف"){if(s.ch.length>1&&confirm("حذف الفصل؟")){s.ch.splice(i,1);s.cur=Math.max(0,Math.min(s.cur,s.ch.length-1))}}else{const j=k=="أعلى"?i-1:i+1;if(s.ch[j]){[s.ch[i],s.ch[j]]=[s.ch[j],s.ch[i]];s.cur=j}}}else s.cur=i;load();save();return}
 li.ondragstart=e=>e.dataTransfer.setData("t",i);li.ondragover=e=>{e.preventDefault();li.classList.add("over")};li.ondragleave=()=>li.classList.remove("over");
 li.ondrop=e=>{e.preventDefault();const f=+e.dataTransfer.getData("t");const [m]=s.ch.splice(f,1);s.ch.splice(i,0,m);s.cur=i;load();save()};
 ul.appendChild(li)})}
-function load(){const c=s.ch[s.cur];$("ct").value=c.t;$("ct").style.display=c.k=="ded"?"none":"";$("ed").innerHTML=c.h;list();cnt()}
-$("ed").oninput=()=>{s.ch[s.cur].h=$("ed").innerHTML;cnt();save()};
+function load(){const c=s.ch[s.cur];$("ct").value=c.t;$("ct").style.display=c.k=="ded"?"none":"";$("ed").innerHTML=c.h;list();cnt();lastC=curC;lastW=curW;goalUi()}
+$("ed").oninput=()=>{s.ch[s.cur].h=$("ed").innerHTML;cnt();trk();save()};
 $("ct").oninput=()=>{s.ch[s.cur].t=$("ct").value;list();save()};
 $("bt").oninput=()=>{s.title=$("bt").value;save()};$("au").oninput=()=>{s.author=$("au").value;save()};
 $("tp").onchange=()=>{s.tpl=$("tp").value;save()};
@@ -252,7 +485,7 @@ if(a.dataset.a=="s"){n.status=n.status=="done"?"wip":"done";n.updated=Date.now()
 else if(confirm("حذف «"+(n.title||"بدون عنوان")+"» نهائياً؟")){delN(n);db.novels.splice(db.novels.indexOf(n),1);home()}};
 g.appendChild(c)})}
 async function openN(n){if(!n.ch){busy(1);try{await loadCh(n)}catch(e){busy(0);alert("مقدرتش أحمّل الرواية. تأكد من الاتصال وجرّب تاني.");return}busy(0)}
-s=n;$("bt").value=s.title;$("au").value=s.author;$("tp").value=s.tpl;$("cv").textContent=s.cover?"🖼 غلاف ✓":"🖼 اختيار غلاف";$("st").textContent=s.status=="done"?"↩ إعادة للتنفيذ":"✓ تم الانتهاء من الرواية";$("sv").textContent="";$("au_on").checked=!!s.auto;$("au_w").value=s.aw||2500;$("au_i").textContent="";document.body.classList.remove("home-on");s.cur=Math.min(s.cur||0,s.ch.length-1);load();scrollTo(0,0)}
+s=n;$("bt").value=s.title;$("au").value=s.author;$("tp").value=s.tpl;$("cv").textContent=s.cover?"🖼 غلاف ✓":"🖼 اختيار غلاف";$("st").textContent=s.status=="done"?"↩ إعادة للتنفيذ":"✓ تم الانتهاء من الرواية";$("sv").textContent="";$("au_on").checked=!!s.auto;$("au_w").value=s.aw||2500;$("au_i").textContent="";$("gt").value=s.gt||"";$("gw").value=s.gw||"";document.body.classList.remove("home-on");s.cur=Math.min(s.cur||0,s.ch.length-1);load();scrollTo(0,0)}
 $("back").onclick=()=>{clearTimeout(timer);persist();s=null;home()};
 $("nn").onclick=()=>{const n=mk();db.novels.push(n);syncN(n);tab="wip";openN(n);$("bt").focus()};
 $("st").onclick=()=>{s.status=s.status=="done"?"wip":"done";tab=s.status;s.updated=Date.now();clearTimeout(timer);persist();s=null;home()};
@@ -299,19 +532,108 @@ $("au_on").onchange=aut;$("au_w").onchange=aut;
 $("au_c").onclick=()=>{const ch=autoSplit(normalPs(),Math.max(300,+$("au_w").value||2500));if(!ch.length){alert("مفيش نص أقسّمه.");return}
 if(!confirm("هيتحوّل النص لـ"+ch.length+" فصل فعلي بأسماء «الفصل الأول» و«الفصل الثاني» وهكذا، وتقدر تغيّر الأسماء بعدين. تكمل؟"))return;
 s.ch=[...s.ch.filter(c=>c.k=="ded"),...s.ch.filter(c=>c.k=="intro"),...ch.map((h,i)=>({t:ordT(i+1),h}))];s.auto=false;$("au_on").checked=false;$("au_i").textContent="";s.cur=0;load();save()};
+const fmt=n=>Math.round(n).toLocaleString("en");
+const dkey=(d=new Date())=>{const p=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())};
+let curC=0,curW=0,lastC=0,lastW=0,sess=null,sK="",sN="",ST={},GOAL=0,stDirty="",stTimer=0,stTab="st",CF=6;
+function dayOf(k,create){const ym=k.slice(0,7),dd=k.slice(8);if(!ST[ym]){if(!create)return null;ST[ym]={days:{}}}if(!ST[ym].days[dd]){if(!create)return null;ST[ym].days[dd]={a:0,r:0,wa:0,wr:0,ses:[]}}return ST[ym].days[dd]}
+function allDays(){const o=[];for(const ym in ST)for(const dd in ST[ym].days){const v=ST[ym].days[dd];o.push({k:ym+"-"+dd,a:v.a||0,r:v.r||0,wa:v.wa||0,wr:v.wr||0,ses:v.ses||[]})}return o.sort((x,y)=>x.k<y.k?-1:1)}
+function todayUi(){const d=dayOf(dkey()),n=d?d.a-d.r:0;$("td").textContent="اليوم: "+(n>0?"+":"")+fmt(n)+" حرف"+(GOAL?" من هدف "+fmt(GOAL):"")}
+function goalUi(){const g=+s.gw||0;$("gp").textContent=g?"هدف الرواية: "+Math.min(100,Math.round(wc1(s)/g*100))+"% ("+fmt(wc1(s))+" من "+fmt(g)+" كلمة)":"";todayUi()}
+function trk(){const dc=curC-lastC,dw=curW-lastW;lastC=curC;lastW=curW;if(!U||(!dc&&!dw)||Math.abs(dc)>2000)return;
+const now=Date.now(),k=dkey(),day=dayOf(k,true);
+if(!sess||now-sess.last>1800000||sK!=k||sN!=s.id){if(day.ses.length>=40)sess=day.ses[day.ses.length-1];else{sess={t:now,last:now,a:0,r:0,wa:0,wr:0,nv:s.title||""};day.ses.push(sess)}sK=k;sN=s.id}
+if(dc>0){sess.a+=dc;day.a+=dc}else{sess.r-=dc;day.r-=dc}
+if(dw>0){sess.wa+=dw;day.wa+=dw}else{sess.wr-=dw;day.wr-=dw}
+sess.last=now;stDirty=k;clearTimeout(stTimer);stTimer=setTimeout(flushSt,20000);todayUi()}
+function flushSt(){clearTimeout(stTimer);if(!stDirty||!U)return;const k=stDirty;stDirty="";const ym=k.slice(0,7),dd=k.slice(8);const b=writeBatch(FS);b.set(doc(FS,"users",U.uid,"stats",ym),{days:{[dd]:ST[ym].days[dd]}},{merge:true});b.commit().catch(()=>{stDirty=k})}
+async function loadStats(){ST={};GOAL=0;const q=await getDocs(collection(FS,"users",U.uid,"stats"));q.docs.forEach(d=>{if(d.id=="settings")GOAL=d.data().goal||0;else if(/^\d{4}-\d{2}$/.test(d.id))ST[d.id]={days:d.data().days||{}}})}
+const GUIDE=[["ومضة / قصة قصيرة جداً",100,1000,"فكرة واحدة ولحظة واحدة"],["قصة قصيرة",1000,7500,"حدث رئيسي وعدد قليل من الشخصيات"],["قصة طويلة (نوفيليت)",7500,17500,"بين القصة القصيرة والنوفيلا"],["رواية قصيرة (نوفيلا)",17500,40000,"حبكة مركّزة وعالم محدود"],["رواية صغيرة",40000,60000,"أقصر حجم يُعدّ رواية كاملة في التصنيف العالمي"],["رواية متوسطة",60000,90000,"حجم شائع في الروايات التجارية"],["رواية كبيرة / ملحمية",90000,0,"حبكات متشعبة وشخصيات كثيرة"]];
+const GT=[["","بدون هدف",0],["s","قصة قصيرة",5000],["ne","قصة طويلة (نوفيليت)",12000],["nv","رواية قصيرة (نوفيلا)",30000],["n1","رواية صغيرة",50000],["n2","رواية متوسطة",75000],["n3","رواية كبيرة",100000],["c","هدف مخصص",0]];
+$("gt").innerHTML=GT.map(g=>'<option value="'+g[0]+'">'+g[1]+(g[2]?" (≈"+fmt(g[2])+" كلمة)":"")+'</option>').join("");
+$("gt").onchange=()=>{s.gt=$("gt").value;const g=GT.find(x=>x[0]==s.gt);if(g&&g[2]){s.gw=g[2];$("gw").value=g[2]}else if(!s.gt){s.gw=0;$("gw").value=""}goalUi();save()};
+$("gw").oninput=()=>{s.gw=+$("gw").value||0;goalUi();save()};
+function renderSt(v){if(v)stTab=v;document.querySelectorAll("#stt button").forEach(b=>b.classList.toggle("on",b.dataset.v==stTab));const c=$("stc");
+if(stTab=="gd"){c.innerHTML='<p style="color:var(--mut)">تصنيفات شائعة في النشر العالمي، والسوق العربي أكثر مرونة ودور النشر بتختلف. اعتبرها إرشاد مش قاعدة ملزمة.</p><label>متوسط حروف الكلمة العربية (بالمسافة)</label><input id="fk" type="number" step="0.5" min="3" max="12" value="'+CF+'" style="width:100px;padding:6px"><table class="gt"><tr><th>النوع</th><th>الكلمات</th><th>الحروف (تقريباً)</th><th>ملاحظة</th></tr>'+GUIDE.map(r=>"<tr><td>"+r[0]+"</td><td>"+fmt(r[1])+"–"+(r[2]?fmt(r[2]):"+")+"</td><td>"+fmt(r[1]*CF)+"–"+(r[2]?fmt(r[2]*CF):"+")+"</td><td>"+r[3]+"</td></tr>").join("")+'</table><p style="color:var(--mut)">حدّد هدف كل رواية من «⚙ بيانات الرواية» جوه الرواية، وهيظهرلك شريط تقدم تحت المحرر. عدد الحروف هنا محسوب بالمسافات زي عدّاد التطبيق.</p>';$("fk").onchange=()=>{CF=+$("fk").value||6;renderSt("gd")};return}
+const days=allDays(),map={};days.forEach(d=>map[d.k]=d);const net=d=>d?d.a-d.r:0,tk=dkey(),tn=net(map[tk]);
+const l7=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);l7.push({n:net(map[dkey(d)]),l:d.toLocaleDateString("ar-EG",{weekday:"short"})})}
+const mx=Math.max(1,...l7.map(x=>x.n));const mon=days.filter(d=>d.k.startsWith(tk.slice(0,7))).reduce((a,d)=>a+net(d),0),tot=days.reduce((a,d)=>a+net(d),0),totw=days.reduce((a,d)=>a+d.wa-d.wr,0);
+const best=days.reduce((a,d)=>net(d)>a.n?{n:net(d),k:d.k}:a,{n:0,k:""});
+let strk=0;const dd=new Date();if(net(map[dkey(dd)])<=0)dd.setDate(dd.getDate()-1);while(net(map[dkey(dd)])>0){strk++;dd.setDate(dd.getDate()-1)}
+const ses=[];days.slice().reverse().forEach(d=>d.ses.slice().reverse().forEach(x=>ses.push(x)));
+c.innerHTML='<div class="sc"><div><b>'+fmt(tn)+'</b>حرف النهارده (صافي)</div><div><b>'+fmt(mon)+'</b>حرف الشهر ده</div><div><b>'+fmt(tot)+'</b>حرف الإجمالي ('+fmt(totw)+' كلمة)</div><div><b>'+strk+'</b>يوم متتالي</div><div><b>'+fmt(best.n)+'</b>أفضل يوم'+(best.k?' ('+best.k+')':'')+'</div></div>'
++'<label>هدفك اليومي (حرف)</label><input id="gl_in" type="number" min="0" step="100" value="'+(GOAL||"")+'" style="width:140px;padding:6px">'+(GOAL?'<div class="pb" style="margin-top:8px"><i style="width:'+Math.min(100,Math.max(0,tn/GOAL*100))+'%"></i></div><small style="color:var(--mut)">'+Math.min(100,Math.max(0,Math.round(tn/GOAL*100)))+'% من هدف النهارده</small>':'')
++'<h3>آخر 7 أيام (صافي الحروف)</h3><div class="bars">'+l7.map(x=>'<div><i style="height:'+Math.max(2,Math.max(0,x.n)/mx*90)+'px"></i>'+x.l+'<br>'+fmt(x.n)+'</div>').join("")+'</div>'
++'<h3>آخر جلسات الكتابة</h3>'+(ses.length?'<table class="gt"><tr><th>الوقت</th><th>المدة</th><th>كتبت / مسحت</th><th>الصافي</th><th>الرواية</th></tr>'+ses.slice(0,15).map(x=>"<tr><td>"+new Date(x.t).toLocaleString("ar-EG",{dateStyle:"medium",timeStyle:"short"})+"</td><td>"+Math.max(1,Math.round((x.last-x.t)/60000))+" د</td><td>+"+fmt(x.a)+" / −"+fmt(x.r)+"</td><td><b>"+fmt(x.a-x.r)+"</b> حرف · "+fmt((x.wa||0)-(x.wr||0))+" كلمة</td><td>"+esc(x.nv||"")+"</td></tr>").join("")+'</table>':'<p style="color:var(--mut)">لسه مفيش جلسات. ابدأ اكتب وهتظهر هنا.</p>')
++'<p style="color:var(--mut);font-size:13px">الإحصائية بتحسب اللي بتكتبه بإيدك (الصافي = المكتوب − الممسوح، وبالمسافات). اللصق والاستيراد لنص أكبر من 2000 حرف مرة واحدة مابيتحسبش. بتبدأ من يوم تفعيلها.</p>';
+$("gl_in").onchange=()=>{GOAL=Math.max(0,+$("gl_in").value||0);const b=writeBatch(FS);b.set(doc(FS,"users",U.uid,"stats","settings"),{goal:GOAL});b.commit().catch(()=>{});renderSt();todayUi()}}
+$("stb").onclick=()=>{document.body.classList.add("st-on");renderSt("st");scrollTo(0,0)};
+$("stk").onclick=()=>document.body.classList.remove("st-on");
+document.querySelectorAll("#stt button").forEach(b=>b.onclick=()=>renderSt(b.dataset.v));
+const AR="\\u0600-\\u06FF";
+const MSP={"لاكن":"لكن","هاذا":"هذا","هاذه":"هذه","ذالك":"ذلك","اللذي":"الذي","اللتي":"التي","شيئ":"شيء","شئ":"شيء","مائه":"مائة","مأة":"مائة","هاؤلاء":"هؤلاء","اولائك":"أولئك","أولائك":"أولئك","مسؤل":"مسؤول"};
+const PF=[
+["sp",new RegExp("(?<=\\S)[ \\u00A0]{2,}","g"),()=>" ",1,"مسافات زيادة"],
+["spb",new RegExp("(?<=\\S)[ \\u00A0]+(?=[،؛؟!:.,;?…])","g"),()=>"",1,"مسافة قبل علامة الترقيم"],
+["spa",new RegExp("(?<=["+AR+"])[.،؛؟!:](?=["+AR+"])","g"),m=>m+" ",1,"مفيش مسافة بعد علامة الترقيم"],
+["lat1",new RegExp("(?<=["+AR+"][ \\u00A0]?),|,(?=[ \\u00A0]?["+AR+"])","g"),()=>"،",1,"فاصلة لاتينية في نص عربي"],
+["lat2",new RegExp("(?<=["+AR+"][ \\u00A0]?);|;(?=[ \\u00A0]?["+AR+"])","g"),()=>"؛",1,"فاصلة منقوطة لاتينية في نص عربي"],
+["lat3",new RegExp("(?<=["+AR+"][ \\u00A0]?)\\?","g"),()=>"؟",1,"علامة استفهام لاتينية في نص عربي"],
+["rep1",/،{2,}|؛{2,}/g,m=>m[0],1,"علامة ترقيم مكررة"],
+["rep2",/\.{4,}/g,()=>"...",1,"نقط كتير (المعتاد ثلاث نقط)"],
+["rep3",/([!؟])\1{3,}/g,m=>m[0].repeat(3),1,"علامات تعجب أو استفهام كتير"],
+["dot2",/(?<!\.)\.\.(?!\.)/g,()=>"...",0,"نقطتين بس. تقصد ثلاث نقط (...)؟"],
+["dup",new RegExp("(?<!["+AR+"])(["+AR+"]{2,})[ \\u00A0]+\\1(?!["+AR+"])","g"),(m,a)=>a,0,"كلمة مكررة (راجع لو مقصودة)"],
+["msp",new RegExp("(?<!["+AR+"])(?:([وفبكل]?)("+Object.keys(MSP).join("|")+")|([اإأ]نشاء\\s+الله|ان\\s+شاء\\s+الله))(?!["+AR+"])","g"),(m,p,w,x)=>x?"إن شاء الله":p+MSP[w],0,"كتابة غير صحيحة"]
+];
+const pfEsc=x=>x.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function pfScan(root,safeOnly){const out=[],tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
+while(node=tw.nextNode()){const v=node.nodeValue;if(!v||!v.trim())continue;const found=[];
+for(const [ty,rx,fn,safe,msg] of PF){if(safeOnly&&!safe)continue;rx.lastIndex=0;let m;while(m=rx.exec(v)){if(!m[0].length){rx.lastIndex++;continue}found.push({ty,s:m.index,e:m.index+m[0].length,t:m[0],r:fn(...m),safe,msg})}}
+found.sort((a,b)=>a.s-b.s||b.e-a.e);let end=-1;
+for(const f of found){if(f.s<end)continue;end=f.e;if(f.r===f.t)continue;out.push({...f,node,v,fix:1})}}
+if(!safeOnly){const bl=[...root.children].filter(e=>/^(DIV|P)$/.test(e.tagName));(bl.length?bl:[root]).forEach(el=>{const x=el.textContent,n=c=>x.split(c).length-1;
+if(n("«")!=n("»")||n("(")!=n(")")||n("[")!=n("]")||n('"')%2||n("“")!=n("”"))out.push({ty:"brk",el,msg:"أقواس أو علامات تنصيص مش متوازنة",t:x.slice(0,40),fix:0})})}
+return out}
+function pfApply(list){const by=new Map();list.filter(i=>i.fix).forEach(i=>{if(!by.has(i.node))by.set(i.node,[]);by.get(i.node).push(i)});
+let n=0;by.forEach((arr,node)=>{arr.sort((a,b)=>b.s-a.s);let v=node.nodeValue;arr.forEach(i=>{if(v.slice(i.s,i.e)===i.t){v=v.slice(0,i.s)+i.r+v.slice(i.e);n++}});node.nodeValue=v});return n}
+function pfPasses(root){let t=0;for(let k=0;k<4;k++){const n=pfApply(pfScan(root,1));if(!n)break;t+=n}return t}
+let pfIg=new Set();
+const pfSig=i=>i.ty+"|"+i.t+"|"+(i.v?i.v.slice(Math.max(0,i.s-8),i.e+8):"");
+function pfSyncEd(){s.ch[s.cur].h=$("ed").innerHTML;cnt();lastC=curC;lastW=curW;save();goalUi()}
+function pfRun(){const all=pfScan($("ed")).filter(i=>!pfIg.has(pfSig(i)));const L=$("pfl");
+const cnts={};all.forEach(i=>cnts[i.msg]=(cnts[i.msg]||0)+1);
+$("pfs").innerHTML=all.length?"لقيت <b>"+all.length+"</b> ملاحظة في الفصل ده:<br><small>"+Object.entries(cnts).map(([k,v])=>k+" ("+v+")").join(" · ")+"</small>":"✓ مالقيتش ملاحظات في الفصل ده.";
+$("pfa").style.display=all.some(i=>i.fix)?"":"none";L.innerHTML="";
+all.slice(0,80).forEach(i=>{const d=document.createElement("div");d.className="pfi";
+const ctx=i.v?pfEsc(i.v.slice(Math.max(0,i.s-14),i.s))+"<mark>"+pfEsc(i.t)+"</mark>"+pfEsc(i.v.slice(i.e,i.e+14)):pfEsc(i.t)+"…";
+d.innerHTML='<div style="flex:1"><small>'+i.msg+'</small><div>'+ctx+'</div>'+(i.fix?'<small>← '+pfEsc(i.r||"(حذف)")+'</small>':'')+'</div>'+(i.fix?'<button class="btn" data-a="f">صحّح</button>':'')+'<button class="btn g" data-a="g">راجع</button><button class="btn g" data-a="i">تجاهل</button>';
+d.onclick=e=>{const a=e.target.closest("button");if(!a)return;const k=a.dataset.a;
+if(k=="f"){pfApply([i]);pfSyncEd();pfRun()}
+else if(k=="i"){pfIg.add(pfSig(i));pfRun()}
+else{const r=document.createRange();if(i.node){r.setStart(i.node,i.s);r.setEnd(i.node,i.e)}else r.selectNodeContents(i.el);const sl=getSelection();sl.removeAllRanges();sl.addRange(r);(i.node?i.node.parentElement:i.el).scrollIntoView({block:"center"})}};
+L.appendChild(d)});
+if(all.length>80){const m=document.createElement("div");m.style.cssText="color:var(--mut);padding:8px";m.textContent="ظاهر أول 80 ملاحظة. صحّح وهتظهر الباقية.";L.appendChild(m)}}
+$("pf_o").onclick=()=>{pfIg=new Set();$("pf").classList.add("on");pfRun()};
+$("pfx").onclick=()=>$("pf").classList.remove("on");
+$("pfa").onclick=()=>{let t=0;for(let k=0;k<4;k++){const all=pfScan($("ed")).filter(i=>!pfIg.has(pfSig(i)));const n=pfApply(all);if(!n)break;t+=n}if(t)pfSyncEd();pfRun()};
+$("pfn").onclick=()=>{if(!confirm("هيصحّح التلقائي بس (مسافات زيادة، ومسافة قبل أو بعد الترقيم، وعلامات لاتينية، وعلامات مكررة) في كل فصول الرواية. مش هيلمس الكلمات المكررة ولا الأخطاء الإملائية. تكمل؟"))return;
+let n=0;s.ch.forEach((c,idx)=>{if(idx==s.cur){n+=pfPasses($("ed"));pfSyncEd()}else{const d=document.createElement("div");d.innerHTML=c.h;const k=pfPasses(d);if(k){c.h=d.innerHTML;n+=k}}});
+save();pfRun();alert(n?"اتصلّح "+n+" ملاحظة تلقائية في الرواية.":"مفيش حاجة تلقائية تتصلّح.")};
+$("kgb").onclick=()=>{if(!$("kgc").innerHTML)$("kgc").innerHTML=$("kgt").innerHTML;document.body.classList.add("kg-on");scrollTo(0,0)};
+$("kgk").onclick=()=>document.body.classList.remove("kg-on");
 $("lg3").src=$("lg").src;
 const app=initializeApp({apiKey:"AIzaSyA3A92aXsxzbUB-fCxc0fe6P2SFHmtTVgs",authDomain:"rewayati-8a15b.firebaseapp.com",projectId:"rewayati-8a15b",storageBucket:"rewayati-8a15b.firebasestorage.app",messagingSenderId:"910214821467",appId:"1:910214821467:web:24b8921c82f514ade3b17e"});const auth=getAuth(app);
 let FS;try{FS=initializeFirestore(app,{localCache:persistentLocalCache({tabManager:persistentMultipleTabManager()})})}catch(e){FS=getFirestore(app)}
 const chdoc=(n_,i_)=>doc(FS,"users",U.uid,"novels",n_,"chapters",i_);
 const busy=on=>$("ld").style.display=on?"flex":"none";
-async function loadAll(){const q=await getDocs(collection(FS,"users",U.uid,"novels"));db.novels=q.docs.map(d=>{const v=d.data();return{id:d.id,title:v.title||"",author:v.author||"",tpl:v.tpl||"pub",cover:v.cover||"",status:v.status||"wip",updated:v.updated||0,cur:v.cur||0,wc:v.wc||0,auto:!!v.auto,aw:v.aw||2500,chs:v.chs||[],ch:null}})}
+async function loadAll(){const q=await getDocs(collection(FS,"users",U.uid,"novels"));db.novels=q.docs.map(d=>{const v=d.data();return{id:d.id,title:v.title||"",author:v.author||"",tpl:v.tpl||"pub",cover:v.cover||"",status:v.status||"wip",updated:v.updated||0,cur:v.cur||0,wc:v.wc||0,auto:!!v.auto,aw:v.aw||2500,gt:v.gt||"",gw:v.gw||0,chs:v.chs||[],ch:null}})}
 async function loadCh(n){if(n.ch)return;const q=await getDocs(collection(FS,"users",U.uid,"novels",n.id,"chapters"));const m={};q.docs.forEach(d=>m[d.id]=d.data());
 n.ch=(n.chs||[]).filter(c=>m[c.id]).map(c=>{const v=m[c.id];const o={id:c.id,t:v.t||c.t||"",h:v.h||""};const k=v.k||c.k;if(k)o.k=k;o._s=(o.t||"")+"\u0001"+(o.k||"")+"\u0001"+o.h;return o});
 if(!n.ch.length)n.ch=[{id:cid(),t:"الفصل الأول",h:""}];n._sy=n.ch.map(c=>c.id)}
 async function sync(n){if(!U||!n)return;
 if((n.cover||"").length>900000)throw new Error("bigcover");
 if(n.ch){n.ch.forEach(c=>{if(!c.id)c.id=cid()});n.wc=wc1(n);n.chs=n.ch.map(c=>({id:c.id,t:c.t||"",k:c.k||""}))}
-const ops=[[0,doc(FS,"users",U.uid,"novels",n.id),{title:n.title||"",author:n.author||"",tpl:n.tpl||"pub",cover:n.cover||"",status:n.status||"wip",updated:n.updated||Date.now(),cur:n.cur||0,wc:n.wc||0,auto:!!n.auto,aw:n.aw||2500,chs:n.chs||[]}]];const marks=[];
+const ops=[[0,doc(FS,"users",U.uid,"novels",n.id),{title:n.title||"",author:n.author||"",tpl:n.tpl||"pub",cover:n.cover||"",status:n.status||"wip",updated:n.updated||Date.now(),cur:n.cur||0,wc:n.wc||0,auto:!!n.auto,aw:n.aw||2500,gt:n.gt||"",gw:n.gw||0,chs:n.chs||[]}]];const marks=[];
 if(n.ch){for(const c of n.ch){const sg=(c.t||"")+"\u0001"+(c.k||"")+"\u0001"+c.h;if(c._s!==sg){if(new Blob([c.h]).size>950000)throw new Error("big");ops.push([0,chdoc(n.id,c.id),{t:c.t||"",k:c.k||"",h:c.h}]);marks.push([c,sg])}}
 (n._sy||[]).filter(i=>!n.ch.some(c=>c.id==i)).forEach(i=>ops.push([1,chdoc(n.id,i)]))}
 const ps=[];for(let i=0;i<ops.length;i+=400){const b=writeBatch(FS);ops.slice(i,i+400).forEach(([t,r,d])=>t?b.delete(r):b.set(r,d));ps.push(b.commit())}
@@ -320,7 +642,7 @@ await Promise.all(ps)}
 function syncN(n){if(!U)return;pend++;if(!navigator.onLine)$("sv").textContent="غير متصل — هيتحفظ أول ما النت يرجع";
 return sync(n).then(()=>{if(--pend<=0){pend=0;$("sv").textContent="تم الحفظ على حسابك ✓"}}).catch(e=>{pend=Math.max(0,pend-1);$("sv").textContent=e.message=="big"?"فصل كبير جداً، قسّمه لفصلين":e.message=="bigcover"?"الغلاف كبير، اختار صورة أصغر":"تعذّر الحفظ ("+(e.code||"خطأ")+")"})}
 function delN(n){const b=writeBatch(FS);const ids=new Set([...(n.chs||[]).map(c=>c.id),...(n.ch||[]).map(c=>c.id)]);ids.forEach(i=>b.delete(chdoc(n.id,i)));b.delete(doc(FS,"users",U.uid,"novels",n.id));b.commit().catch(e=>alert("تعذّر الحذف من الحساب ("+(e.code||"")+")"))}
-async function wipeAccount(){const ns=await getDocs(collection(FS,"users",U.uid,"novels"));for(const d of ns.docs){const cs=await getDocs(collection(FS,"users",U.uid,"novels",d.id,"chapters"));const rs=[...cs.docs.map(x=>x.ref),d.ref];for(let i=0;i<rs.length;i+=400){const b=writeBatch(FS);rs.slice(i,i+400).forEach(r=>b.delete(r));await b.commit()}}}
+async function wipeAccount(){const ns=await getDocs(collection(FS,"users",U.uid,"novels"));for(const d of ns.docs){const cs=await getDocs(collection(FS,"users",U.uid,"novels",d.id,"chapters"));const rs=[...cs.docs.map(x=>x.ref),d.ref];for(let i=0;i<rs.length;i+=400){const b=writeBatch(FS);rs.slice(i,i+400).forEach(r=>b.delete(r));await b.commit()}}const sq=await getDocs(collection(FS,"users",U.uid,"stats"));for(let i=0;i<sq.docs.length;i+=400){const b=writeBatch(FS);sq.docs.slice(i,i+400).forEach(x=>b.delete(x.ref));await b.commit()}}
 async function offerMigrate(){let L=[];try{const r=localStorage.getItem("rewayati_v2");if(r)L=(JSON.parse(r).novels)||[];else{const o=localStorage.getItem("rewayati_v1");if(o)L=[Object.assign(mk(),JSON.parse(o))]}}catch(e){}
 L=L.filter(n=>n&&n.ch&&n.id&&!db.novels.some(x=>x.id==n.id));if(!L.length||localStorage.getItem("rewayati_mig_done"))return;
 if(!confirm("لقيت "+L.length+" رواية محفوظة على الجهاز ده من النسخة القديمة. أرفعها لحسابك؟ (لو مش رواياتك اضغط إلغاء)"))return;
@@ -339,12 +661,13 @@ $("out").onclick=async()=>{if(pend>0&&!confirm("في تعديلات لسه ما�
 $("del").onclick=async()=>{if(!confirm("هتحذف حسابك وكل رواياتك نهائياً ومش هتقدر ترجّعها. متأكد؟"))return;if(prompt("للتأكيد اكتب كلمة: حذف")!=="حذف")return;
 try{if(U.providerData.some(p=>p.providerId=="password")){const p=prompt("اكتب كلمة السر الحالية للتأكيد");if(!p)return;await reauthenticateWithCredential(U,EmailAuthProvider.credential(U.email,p))}else await reauthenticateWithPopup(U,new GoogleAuthProvider());
 busy(1);await wipeAccount();await deleteUser(U);busy(0)}catch(e){busy(0);alert("تعذّر حذف الحساب: "+am(e))}};
-document.addEventListener("visibilitychange",()=>{if(document.hidden)flush()});addEventListener("pagehide",flush);
+document.addEventListener("visibilitychange",()=>{if(document.hidden){flush();flushSt()}});addEventListener("pagehide",()=>{flush();flushSt()});
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 onAuthStateChanged(auth,async u=>{U=u;
 if(!u){db={novels:[]};s=null;$("al").hidden=true;$("af").hidden=false;$("em1").value="";$("pw1").value="";document.body.classList.add("auth-on");return}
 $("af").hidden=true;$("al").hidden=false;$("al").textContent="جارٍ تحميل رواياتك…";
 try{await loadAll()}catch(e){$("al").textContent="تعذّر تحميل رواياتك. تأكد من الاتصال وحدّث الصفحة.";return}
+try{await loadStats()}catch(e){ST={};GOAL=0}
 document.body.classList.remove("auth-on");document.body.classList.add("home-on");$("em").textContent=u.email||"";tab="wip";home();offerMigrate()});
 
 </script>
